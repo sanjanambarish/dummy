@@ -1,0 +1,304 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* HealthMate AI Design System - Accessible healthcare interface */
+
+@layer base {
+  :root {
+    /* Healthcare primary colors - calming blues */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 15%;
+
+    /* Card and surface colors */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Primary - healthcare blue */
+    --primary: 210 75% 48%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 210 75% 42%;
+
+    /* Secondary - soft wellness green */
+    --secondary: 150 40% 96%;
+    --secondary-foreground: 150 60% 25%;
+
+    /* Wellness theme colors */
+    --wellness: 150 60% 50%;
+    --wellness-foreground: 0 0% 100%;
+    --wellness-light: 150 40% 96%;
+
+    /* Medicine theme colors */
+    --medicine: 260 60% 50%;
+    --medicine-foreground: 0 0% 100%;
+    --medicine-light: 260 40% 96%;
+
+    /* Prescription theme colors */
+    --prescription: 35 75% 50%;
+    --prescription-foreground: 0 0% 100%;
+    --prescription-light: 35 40% 96%;
+
+    /* Accessible muted colors */
+    --muted: 210 15% 95%;
+    --muted-foreground: 215 25% 45%;
+
+    /* High contrast accent */
+    --accent: 210 15% 95%;
+    --accent-foreground: 215 25% 15%;
+
+    /* Error states */
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Success states */
+    --success: 150 60% 50%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning states */
+    --warning: 35 75% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 215 15% 88%;
+    --input: 215 15% 88%;
+    --ring: 210 75% 48%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 75% 48%), hsl(210 75% 38%));
+    --gradient-wellness: linear-gradient(135deg, hsl(150 60% 50%), hsl(150 60% 40%));
+    --gradient-medicine: linear-gradient(135deg, hsl(260 60% 50%), hsl(260 60% 40%));
+    --gradient-prescription: linear-gradient(135deg, hsl(35 75% 50%), hsl(35 75% 40%));
+
+    /* Shadows for depth */
+    --shadow-sm: 0 2px 4px hsl(210 10% 0% / 0.05);
+    --shadow-md: 0 4px 12px hsl(210 10% 0% / 0.08);
+    --shadow-lg: 0 8px 24px hsl(210 10% 0% / 0.12);
+
+    /* Accessible radius for elderly users */
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-size: 16px; /* Mobile-first responsive font sizing */
+    line-height: 1.6;
+  }
+
+  /* Spotify-inspired mobile typography scale */
+  .text-mobile-xs {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .text-mobile-sm {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .text-mobile-base {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .text-mobile-lg {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  .text-mobile-xl {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+
+  .text-mobile-2xl {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    font-weight: 700;
+  }
+
+  .text-mobile-3xl {
+    font-size: 1.75rem;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  /* Responsive heading scale */
+  .heading-primary {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 640px) {
+    .heading-primary {
+      font-size: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .heading-primary {
+      font-size: 2.5rem;
+    }
+  }
+
+  .heading-secondary {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  @media (min-width: 640px) {
+    .heading-secondary {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .heading-secondary {
+      font-size: 1.75rem;
+    }
+  }
+
+  /* Mobile-first button styles */
+  .button-mobile {
+    min-height: 3rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .button-mobile {
+      min-height: 3.5rem;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
+
+  .button-large {
+    min-height: 3.5rem;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  @media (min-width: 640px) {
+    .button-large {
+      min-height: 4rem;
+      padding: 1rem 2rem;
+      font-size: 1.125rem;
+    }
+  }
+
+  /* Smooth transitions for better UX */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px hsl(210 10% 0% / 0.15);
+  }
+
+  /* Button animations */
+  .btn-animate {
+    transition: all 0.2s ease;
+  }
+  
+  .btn-animate:hover {
+    transform: translateY(-1px);
+  }
+  
+  .btn-animate:active {
+    transform: translateY(0);
+  }
+
+  /* Floating animation for voice assistant */
+  .voice-pulse {
+    animation: float 3s ease-in-out infinite;
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.3);
+  }
+
+  /* Focus styles for accessibility */
+  .focus-accessible:focus {
+    outline: 3px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* Staggered animation delays */
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+}
